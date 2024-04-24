@@ -3,7 +3,10 @@
 # File Created: 4/22/2024
 
 # import objects and headers
+import os
 from pydub import AudioSegment
+ffmpeg_path = "C:/ffmpeg"
+AudioSegment.converter = ffmpeg_path
 
 
 # function to reformat file from .mp3 to .wav

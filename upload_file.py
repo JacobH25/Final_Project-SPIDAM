@@ -17,7 +17,10 @@ def upload_file():
     # removes metadata from .wav file
     clean_wav = clean.remove_metadata(wav_file)
     # converts clean .wav file to single- or mono-channel
-    clean_mono_wav = clean.remove_metadata(clean_wav)
+    clean_mono_wav = clean.handle_multi_chan(clean_wav)
 
     # returns selected fileInitializes
     return clean_mono_wav
+
+
+print(upload_file())
