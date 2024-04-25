@@ -165,27 +165,30 @@ def plot_rt60_lmh_data():
     plt.plot(t, high_data_in_db, color="#84FF94")
     plt.plot(t, mid_data_in_db, color="#FFDD84")
     plt.plot(t, low_data_in_db, color="#FF8484")
-    # plot time index values for high frequencies
-    plt.plot(t[index_of_high_max], high_data_in_db[index_of_high_max],
-         '#00FF21', label=f'Max: {t[index_of_high_max]:.2f} dB')
-    plt.plot(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5],
-         '#00A916', label=f'Max: {value_of_high_max_less_5:.2f} dB')
-    plt.plot(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25],
-         '#00750F', label=f'Max: {value_of_high_max_less_25:.2f} dB')
-    # plot time index values for mid frequencies
-    plt.plot(t[index_of_mid_max], mid_data_in_db[index_of_mid_max],
-         '#FFB900', label=f'Max: {index_of_mid_max:.2f} dB')
-    plt.plot(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5],
-         '#AA7C00', label=f'Max: {value_of_mid_max_less_5:.2f} dB')
-    plt.plot(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25],
-         '#815E00', label=f'Max: {value_of_mid_max_less_25:.2f} dB')
-    # plot time index values for low frequencies
-    plt.plot(t[index_of_low_max], low_data_in_db[index_of_low_max],
-         '#FF0000', label=f'Max: {index_of_low_max:.2f} dB')
-    plt.plot(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5],
-         '#A00000', label=f'Max: {value_of_low_max_less_5:.2f} dB')
-    plt.plot(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25],
-         '#800000', label=f'Max: {value_of_low_max_less_25:.2f} dB')
+
+    # Plot index values for high frequencies
+    plt.scatter(t[index_of_high_max], high_data_in_db[index_of_high_max],
+                color='#00FF21', label=f'Max: {t[index_of_high_max]:.2f} dB')
+    plt.scatter(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5],
+                color='#00A916', label=f'Max: {value_of_high_max_less_5:.2f} dB')
+    plt.scatter(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25],
+                color='#00750F', label=f'Max: {value_of_high_max_less_25:.2f} dB')
+
+    # Plot index values for mid frequencies
+    plt.scatter(t[index_of_mid_max], mid_data_in_db[index_of_mid_max],
+                color='#FFB900', label=f'Max: {t[index_of_mid_max]:.2f} dB')
+    plt.scatter(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5],
+                color='#AA7C00', label=f'Max: {value_of_mid_max_less_5:.2f} dB')
+    plt.scatter(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25],
+                color='#815E00', label=f'Max: {value_of_mid_max_less_25:.2f} dB')
+
+    # Plot index values for low frequencies
+    plt.scatter(t[index_of_low_max], low_data_in_db[index_of_low_max],
+                color='#FF0000', label=f'Max: {t[index_of_low_max]:.2f} dB')
+    plt.scatter(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5],
+                color='#A00000', label=f'Max: {value_of_low_max_less_5:.2f} dB')
+    plt.scatter(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25],
+                color='#800000', label=f'Max: {value_of_low_max_less_25:.2f} dB')
     plt.title('RT60: Lo, Mi, Hi')
     plt.legend()
     return lmh_data_plot
@@ -198,92 +201,98 @@ def plot_rt60_lmh():
     plt.plot(t, mid_data_in_db, color="#FFDD84")
     plt.plot(t, low_data_in_db, color="#FF8484")
     # plot time index values for high frequencies
-    plt.plot(t[index_of_high_max], high_data_in_db[index_of_high_max], '#00FF21')
-    plt.plot(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5], '#00A916')
-    plt.plot(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25], '#00750F')
+    plt.scatter(t[index_of_high_max], high_data_in_db[index_of_high_max], color='#00FF21')
+    plt.scatter(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5], color='#00A916')
+    plt.scatter(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25], color='#00750F')
     # plot time index values for mid frequencies
-    plt.plot(t[index_of_mid_max], mid_data_in_db[index_of_mid_max], '#FFB900')
-    plt.plot(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5], '#AA7C00')
-    plt.plot(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25], '#815E00')
+    plt.scatter(t[index_of_mid_max], mid_data_in_db[index_of_mid_max], color='#FFB900')
+    plt.scatter(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5], color='#AA7C00')
+    plt.scatter(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25], color='#815E00')
     # plot time index values for low frequencies
-    plt.plot(t[index_of_low_max], low_data_in_db[index_of_low_max], '#FF0000')
-    plt.plot(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5], '#A00000')
-    plt.plot(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25], '#800000')
+    plt.scatter(t[index_of_low_max], low_data_in_db[index_of_low_max], color='#FF0000')
+    plt.scatter(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5], color='#A00000')
+    plt.scatter(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25], color='#800000')
     plt.title('RT60: Low, Mid, High')
     plt.legend()
     return lmh_plot
 
 
 def plot_rt60_high_data():
-    high_data_plot = plt.plot(t, high_data_in_db, color="#84FF94")
+    high_data_plot = plt.figure()
+    plt.plot(t, high_data_in_db, color="#84FF94")
     # plot time index values for high frequencies
-    plt.plot(t[index_of_high_max], high_data_in_db[index_of_high_max],
-             color='#00FF21', label=f'Max: {t[index_of_high_max]:.2f} dB')
-    plt.plot(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5],
-             '#00A916', label=f'Max: {t[value_of_high_max_less_5]:.2f} dB')
-    plt.plot(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25],
-             '#00750F', label=f'Max: {t[value_of_high_max_less_25]:.2f} dB')
+    plt.scatter(t[index_of_high_max], high_data_in_db[index_of_high_max],
+                color='#00FF21', label=f'Max: {t[index_of_high_max]:.2f} dB')
+    plt.scatter(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5],
+                color='#00A916', label=f'Max: {value_of_high_max_less_5:.2f} dB')
+    plt.scatter(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25],
+                color='#00750F', label=f'Max: {value_of_high_max_less_25:.2f} dB')
     plt.title('RT60: High')
     plt.legend()
     return high_data_plot
 
 
 def plot_rt60_high():
-    high_plot = plt.plot(t, high_data_in_db, color="#84FF94")
+    high_plot = plt.figure()
+    plt.plot(t, high_data_in_db, color="#84FF94")
     # plot time index values for high frequencies
-    plt.plot(t[index_of_high_max], high_data_in_db[index_of_high_max], color='#00FF21')
-    plt.plot(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5], color='#00A916')
-    plt.plot(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25], color='#00750F')
+    plt.scatter(t[index_of_high_max], high_data_in_db[index_of_high_max], color='#00FF21')
+    plt.scatter(t[index_of_high_max_less_5], high_data_in_db[index_of_high_max_less_5], color='#00A916')
+    plt.scatter(t[index_of_high_max_less_25], high_data_in_db[index_of_high_max_less_25], color='#00750F')
     plt.title('RT60: High')
     plt.legend()
     return high_plot
 
 
 def plot_rt60_mid_data():
-    mid_data_plot = plt.plot(t, mid_data_in_db, color="#84FF94")
+    mid_data_plot = plt.figure()
+    plt.plot(t, mid_data_in_db, color="#FFDD84")
     # plot time index values for mid frequencies
-    plt.plot(t[index_of_mid_max], mid_data_in_db[index_of_mid_max],
-             color='#00FF21', label=f'Max: {t[index_of_mid_max]:.2f} dB')
-    plt.plot(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5],
-             '#00A916', label=f'Max: {t[value_of_mid_max_less_5]:.2f} dB')
-    plt.plot(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25],
-             '#00750F', label=f'Max: {t[value_of_mid_max_less_25]:.2f} dB')
+    plt.scatter(t[index_of_mid_max], mid_data_in_db[index_of_mid_max],
+                color='#FFB900', label=f'Max: {t[index_of_mid_max]:.2f} dB')
+    plt.scatter(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5],
+                color='#AA7C00', label=f'Max: {value_of_mid_max_less_5:.2f} dB')
+    plt.scatter(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25],
+                color='#815E00', label=f'Max: {value_of_mid_max_less_25:.2f} dB')
     plt.title('RT60: Mid')
     plt.legend()
     return mid_data_plot
 
 
 def plot_rt60_mid():
-    mid_plot = plt.plot(t, mid_data_in_db, color="#84FF94")
+    mid_plot = plt.figure()
+    plt.plot(t, mid_data_in_db, color="#FFDD84")
     # plot time index values for mid frequencies
-    plt.plot(t[index_of_mid_max], mid_data_in_db[index_of_mid_max], color='#00FF21')
-    plt.plot(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5], color='#00A916')
-    plt.plot(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25], color='#00750F')
+    plt.scatter(t[index_of_mid_max], mid_data_in_db[index_of_mid_max], color='#FFB900')
+    plt.scatter(t[index_of_mid_max_less_5], mid_data_in_db[index_of_mid_max_less_5], color='#AA7C00')
+    plt.scatter(t[index_of_mid_max_less_25], mid_data_in_db[index_of_mid_max_less_25], color='#815E00')
     plt.title('RT60: Mid')
     plt.legend()
     return mid_plot
 
 
 def plot_rt60_low_data():
-    low_data_plot = plt.plot(t, low_data_in_db, color="#84FF94")
+    low_data_plot = plt.figure()
+    plt.plot(t, low_data_in_db, color="#FF8484")
     # plot time index values for low frequencies
-    plt.plot(t[index_of_low_max], low_data_in_db[index_of_low_max],
-             color='#00FF21', label=f'Max: {t[index_of_low_max]:.2f} dB')
-    plt.plot(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5],
-             '#00A916', label=f'Max: {t[value_of_low_max_less_5]:.2f} dB')
-    plt.plot(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25],
-             '#00750F', label=f'Max: {t[value_of_low_max_less_25]:.2f} dB')
+    plt.scatter(t[index_of_low_max], low_data_in_db[index_of_low_max],
+                color='#FF0000', label=f'Max: {t[index_of_low_max]:.2f} dB')
+    plt.scatter(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5],
+                color='#A00000', label=f'Max: {value_of_low_max_less_5:.2f} dB')
+    plt.scatter(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25],
+                color='#800000', label=f'Max: {value_of_low_max_less_25:.2f} dB')
     plt.title('RT60: Low')
     plt.legend()
     return low_data_plot
 
 
 def plot_rt60_low():
-    low_plot = plt.plot(t, low_data_in_db, color="#84FF94")
+    low_plot = plt.figure()
+    plt.plot(t, low_data_in_db, color="#FF8484")
     # plot time index values for low frequencies
-    plt.plot(t[index_of_low_max], low_data_in_db[index_of_low_max], color='#00FF21')
-    plt.plot(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5], color='#00A916')
-    plt.plot(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25], color='#00750F')
+    plt.scatter(t[index_of_low_max], low_data_in_db[index_of_low_max], color='#FF0000')
+    plt.scatter(t[index_of_low_max_less_5], low_data_in_db[index_of_low_max_less_5], color='#A00000')
+    plt.scatter(t[index_of_low_max_less_25], low_data_in_db[index_of_low_max_less_25], color='#800000')
     plt.title('RT60: Low')
     plt.legend()
     return low_plot
@@ -311,5 +320,13 @@ def rt60_low():
 
 
 # Display all open plot windows
-plot = plot_rt60_lmh_data
+plot_waveform()
+plot_rt60_lmh_data()
+plot_rt60_lmh()
+plot_rt60_high_data()
+plot_rt60_high()
+plot_rt60_mid_data()
+plot_rt60_mid()
+plot_rt60_low_data()
+plot_rt60_low()
 plt.show()
