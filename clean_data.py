@@ -1,12 +1,6 @@
 # clean_data.py
-# Programmer Name: Jacob Hensley
-# File Created: 4/22/2024
 
-# import objects and headers
-import os
 from pydub import AudioSegment
-ffmpeg_path = "C:/ffmpeg"
-AudioSegment.converter = ffmpeg_path
 
 
 # function to reformat file from .mp3 to .wav
@@ -29,20 +23,18 @@ def reformat_file(input_file):
 
 # function to remove metadata from .wav file
 def remove_metadata(input_file):
-	# extracts raw audio from file
+	# Load the audio data directly from the WAV file
 	audio = AudioSegment.from_wav(input_file)
-	# if metadata tags are found in file
-	if audio.tags:
-		# initializes new .wav file for cleaned audio
-		clean_wav_file = "clean_sound.wav"
-		# exports audio without metadata to new clean wav file
-		audio.export(clean_wav_file, format="wav", tags={})
-		# returns new clean wav file
-		return clean_wav_file
-	# if no metadata is found
-	else:
-		# returns input file
-		return input_file
+
+	# Check if the audio object has tags (metadata)
+	#if hasattr(audio, 'tags') and audio.tags:
+		# If metadata/tags exist, remove them
+	clean_wav_file = "clean_sound.wav"
+	audio.export(clean_wav_file, format="wav", tags={})
+	return clean_wav_file
+	#else:
+		# If no metadata/tags exist, simply return the input file
+		#return input_file
 
 
 # function to convert multi-channel to mono-channel
