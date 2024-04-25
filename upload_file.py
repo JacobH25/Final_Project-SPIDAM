@@ -21,6 +21,3 @@ def upload_file():
 
     # returns selected fileInitializes
     return clean_mono_wav
-
-
-print(upload_file())
