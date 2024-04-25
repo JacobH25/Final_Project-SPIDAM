@@ -155,7 +155,18 @@ def plot_waveform():
     wave_plot = plt.figure()
     plt.plot(data)
     plt.title('Waveform')
+    plt.xlabel('Time [s]')
     return wave_plot
+
+
+def plot_spectrogram():
+    spectrogram = plt.figure()
+    plt.specgram(data, Fs=sample_rate, NFFT=1024, cmap=plt.get_cmap('autumn_r'))
+    plt.title('Spectrogram')
+    plt.xlabel('Time [s]')
+    plt.ylabel('Frequency [Hz]')
+    plt.colorbar(label='Intensity [dB]')
+    return spectrogram
 
 
 # Plot 2: Combined RT60 Line Graph (with data points)
@@ -320,13 +331,14 @@ def rt60_low():
 
 
 # Display all open plot windows
-plot_waveform()
-plot_rt60_lmh_data()
-plot_rt60_lmh()
-plot_rt60_high_data()
-plot_rt60_high()
-plot_rt60_mid_data()
-plot_rt60_mid()
-plot_rt60_low_data()
-plot_rt60_low()
-plt.show()
+# plot_waveform()
+# plot_spectrogram()
+# plot_rt60_lmh_data()
+# plot_rt60_lmh()
+# plot_rt60_high_data()
+# plot_rt60_high()
+# plot_rt60_mid_data()
+# plot_rt60_mid()
+# plot_rt60_low_data()
+# plot_rt60_low()
+# plt.show()
