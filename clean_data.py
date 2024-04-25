@@ -27,14 +27,15 @@ def remove_metadata(input_file):
 	audio = AudioSegment.from_wav(input_file)
 
 	# Check if the audio object has tags (metadata)
-	#if hasattr(audio, 'tags') and audio.tags:
-		# If metadata/tags exist, remove them
-	clean_wav_file = "clean_sound.wav"
-	audio.export(clean_wav_file, format="wav", tags={})
-	return clean_wav_file
-	#else:
+	# if hasattr(audio, 'tags') and audio.tags:
+	if audio.channels or audio.sample_width or audio.frame_rate or audio.frame_length or len(audio):
+		# If metadata/tags exist, remove them by exporting without tags
+		clean_wav_file = "clean_sound.wav"
+		audio.export(clean_wav_file, format="wav", tags={})
+		return clean_wav_file
+	else:
 		# If no metadata/tags exist, simply return the input file
-		#return input_file
+		return input_file
 
 
 # function to convert multi-channel to mono-channel
