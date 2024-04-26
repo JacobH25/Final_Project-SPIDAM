@@ -11,9 +11,7 @@ uploaded_file = None  # Global variable to store the uploaded file path
 
 
 def upload_file():
-    global uploaded_file
-    if uploaded_file is None:
-        uploaded_file = eg.fileopenbox()
+    uploaded_file = eg.fileopenbox()
 
     file = uploaded_file
 
