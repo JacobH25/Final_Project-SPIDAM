@@ -1,11 +1,15 @@
+# data_calc.py
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 import upload_file  # Import the upload_file function
+from gui_main import file
 
+file_path = file
 
 # Call the upload_file function to obtain sample_rate and data
-sample_rate, data = wavfile.read(upload_file.upload_file())
+sample_rate, data = wavfile.read(file_path)
 # Compute the spectrogram of the audio data
 spectrum, freqs, t, im = plt.specgram(data, Fs=sample_rate, NFFT=1024, cmap=plt.get_cmap('autumn_r'))
 plt.title('Spectrogram')  # Plotting the Spectrogram first

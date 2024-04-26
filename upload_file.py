@@ -7,10 +7,15 @@ import easygui as eg
 import clean_data as clean
 
 
-# upload_file function
+uploaded_file = None  # Global variable to store the uploaded file path
+
+
 def upload_file():
-    #  file as file selected by user via File Explorer
-    file = eg.fileopenbox()
+    global uploaded_file
+    if uploaded_file is None:
+        uploaded_file = eg.fileopenbox()
+
+    file = uploaded_file
 
     # reformat file to .wav
     wav_file = clean.reformat_file(file)
