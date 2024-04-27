@@ -3,6 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
+from scipy.signal import welch
 import upload_file as uf  # Import the upload_file function
 
 
@@ -121,6 +122,7 @@ def update_high_data():
     value_of_high_max_less_25 = value_of_high_max - 25
     value_of_high_max_less_25 = find_nearest_value(sliced_high_array, value_of_high_max_less_25)
     index_of_high_max_less_25 = np.where(high_data_in_db == value_of_high_max_less_25)[0][0]
+    calculate_max_res_frequency()
 
 
 def update_mid_data():
@@ -326,6 +328,12 @@ def plot_rt60_low():
     plt.title('RT60: Low')
     plt.legend()
     return low_plot
+
+
+def calculate_max_res_frequency():
+    frequencies, power = welch(data, sample_rate, nperseg=4096)
+    dominant_frequency = frequencies[np.argmax(power)]
+    return round(dominant_frequency)
 
 
 def rt60_high():
