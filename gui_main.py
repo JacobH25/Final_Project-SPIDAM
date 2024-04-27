@@ -216,11 +216,11 @@ if __name__ == '__main__':
     graphContainer = tk.Frame(root, bg="white")
     graphContainer.grid(row=3, column=0, columnspan=3, sticky="nsew")
 
-    status_bar = tk.Label(root, text="File uploaded successfully! Select button to analyze sound file.", bd=1,
+    status_bar = tk.Label(root, text="...waiting for file upload...", bd=1,
                           relief=tk.SUNKEN, anchor=tk.CENTER)
     status_bar.grid(row=5, column=0, columnspan=7, sticky="ew", pady=25)
 
-    display_blank_left()
     display_blank_right()
+    display_blank_left()
 
     root.mainloop()  # run the program
