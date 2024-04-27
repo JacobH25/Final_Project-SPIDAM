@@ -16,7 +16,7 @@ def handle_file_upload():
 
 
 # Modify this line to call handle_file_upload whenever needed
-file_path = handle_file_upload()
+# file_path = handle_file_upload()
 
 
 # HIGH
