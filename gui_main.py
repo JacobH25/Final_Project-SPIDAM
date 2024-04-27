@@ -35,6 +35,7 @@ def display_waveform():
     canvas_widget = canvas.get_tk_widget()
     canvas_widget.grid(row=0, column=0, padx=10, pady=2, sticky="w")
     canvas.draw()
+    update_status_bar(f"Max Resonance: {dc.calculate_max_res_frequency()} Hz")
 
 
 def display_spectrogram():
@@ -43,6 +44,7 @@ def display_spectrogram():
     canvas_widget = canvas.get_tk_widget()
     canvas_widget.grid(row=0, column=0, padx=10, pady=2, sticky="w")
     canvas.draw()
+    update_status_bar(f"Max Resonance: {dc.calculate_max_res_frequency()} Hz")
 
 
 def display_rt60_lmh_data():
