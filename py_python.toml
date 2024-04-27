@@ -1,0 +1,25 @@
+[project]
+name = "Final_Project-SPIDAM"
+version = "1.0.0"
+
+author =[
+{name="Janmesh Bhatt",
+email="jbhatt2178@floridapoly.edu"},
+{name="Jacob Hensley",
+email="jhensley4795@floridapoly.edu"},
+{name="Megan Ruiz",
+email="mruiz3522@floridapoly.edu"},
+]
+
+discription = "Project - Scientific Python Interactive Data Acoustic Modeling"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage ="https://github.com/JacobH25/Final_Project-SPIDAM"
+Issues = "https://github.com/JacobH25/Final_Project-SPIDAM/issues"
